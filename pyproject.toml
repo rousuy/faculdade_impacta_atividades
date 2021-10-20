@@ -8,6 +8,7 @@ authors = ["Rodrigo Usuy <rousuy@gmail.com>"]
 python = "^3.9"
 
 [tool.poetry.dev-dependencies]
+flake8 = "^4.0.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
