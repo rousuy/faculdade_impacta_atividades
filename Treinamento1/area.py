@@ -15,12 +15,19 @@ após o ponto decimal.
 """
 
 # Resposta:
-A = float(input())
-B = float(input())
-C = float(input())
-a1 = (A * C) / 2
-b2 = 3.14159 * C ** 2
-c3 = ((A + B) / 2) * C
-d4 = B ** 2
-e5 = A * B
-print(f"TRIANGULO: {a1:.3f}\nCIRCULO: {b2:.3f}\nTRAPEZIO: {c3:.3f}\nQUADRADO: {d4:.3f}\nRETANGULO: {e5:.3f}")
+valor = input().split(" ")
+
+a, b, c = valor
+pi = 3.14159
+
+triangulo = (float(a) * float(c))/2
+circulo = pi * (float(c) * float(c))
+trapezio = float(c) * (float(a) + float(b)) / 2
+quadrado = float(b) * float(b)
+retangulo = float(a) * float(b)
+
+
+print(
+    "TRIANGULO: %0.3f\nCIRCULO: %0.3f\nTRAPEZIO: %0.3f\nQUADRADO: %0.3f\nRETANGULO: %0.3f"
+    % (triangulo, circulo, trapezio, quadrado, retangulo)
+    )
