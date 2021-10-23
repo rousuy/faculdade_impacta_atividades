@@ -34,17 +34,15 @@ exibida a string 'sera entregue <dia>', em que <dia> será o dia correspondent
 # Resposta:
 # Entrada do dia da semana e data de entrega:
 semana = ['domingo', 'segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado']
-dias = (0, 1, 2, 3, 4, 5, 6)
 data_compra = []
 data_entrega = []
 while data_compra not in semana:
     data_compra = input()
-while data_entrega not in dias:
+while data_entrega not in [0, 1, 2, 3, 4, 5, 6]:
     data_entrega = int(input())
 if data_entrega == 0:
     print("chega hoje!")
 else:
-    index_semama = semana.index(data_compra)
-    calcula_entrega = semana[index_semama + 1:len(semana)] + semana[0:index_semama]
+    calcula_entrega = semana[semana.index(data_compra) + 1:len(semana)] + semana[0:semana.index(data_compra)]
     entrega = calcula_entrega[data_entrega - 1]
     print(f"sera entregue {entrega}")
