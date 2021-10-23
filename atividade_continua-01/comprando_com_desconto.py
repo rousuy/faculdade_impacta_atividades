@@ -32,4 +32,4 @@ total = qtde * preco
 # Total do desconto
 desconto = (((qtde * 0.01) + 0.1) * total)
 # Imprimi na tela o valor total da compra e o valor total aplicado o desconto.
-print(f"{total}\n{(total - desconto):.2f}")
+print(f"{total:.2f}\n{(total - desconto):.2f}")
