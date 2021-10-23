@@ -10,10 +10,9 @@ Imprima a mensagem DIFERENCA com todas as letras maiúsculas
 """
 
 # Resposta:
-
-A = int(input())
-B = int(input())
-C = int(input())
-D = int(input())
+lista = []
+for value in range(0, 4):
+    lista.append(int(input()))
+A, B, C, D = lista
 diferenca = (A*B) - (C*D)
 print(f"DIFERENCA = {diferenca}")

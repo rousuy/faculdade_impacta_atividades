@@ -28,6 +28,6 @@ retangulo = float(a) * float(b)
 
 
 print(
-    "TRIANGULO: %0.3f\nCIRCULO: %0.3f\nTRAPEZIO: %0.3f\nQUADRADO: %0.3f\nRETANGULO: %0.3f"
-    % (triangulo, circulo, trapezio, quadrado, retangulo)
+    f"TRIANGULO: {triangulo:.3f}\nCIRCULO: {circulo:.3f}f\nTRAPEZIO: {trapezio:.3f}\nQUADRADO: {quadrado:.3f}"
+    "\nRETANGULO: {retangulo:.3f}"
     )
