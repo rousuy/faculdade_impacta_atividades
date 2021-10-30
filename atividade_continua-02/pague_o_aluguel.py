@@ -20,9 +20,8 @@ O número do pagamento, o valor restante da dívida antes do pagamento mensal e 
 pagamento mensal, conforme o padrão exibido nos exemplos. A exibição deve continuar até que a dívida seja quitada.
 """
 # Resposta:
-divida, valor_pago = input().split()
-divida = int(divida)
-valor_pago = int(valor_pago)
+valores = input().split()
+divida, valor_pago = valores[0], valores[1]
 if divida > valor_pago:
     for key, value in enumerate(range(divida, -valor_pago, -valor_pago)):
         if value != 0:
