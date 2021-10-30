@@ -21,7 +21,7 @@ pagamento mensal, conforme o padrão exibido nos exemplos. A exibição deve con
 """
 # Resposta:
 valores = input().split()
-divida, valor_pago = valores[0], valores[1]
+divida, valor_pago = int(valores[0]), int(valores[1])
 if divida > valor_pago:
     for key, value in enumerate(range(divida, -valor_pago, -valor_pago)):
         if value != 0:
