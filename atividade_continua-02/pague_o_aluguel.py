@@ -26,8 +26,12 @@ valores = input().split()
 divida, valor_pago = int(valores[0]), int(valores[1])
 if divida > valor_pago:
     for key, value in enumerate(range(divida, -valor_pago, -valor_pago)):
-        if value != 0:
-            print(f'pagamento: {key + 1}\nantes = {value}\ndepois = {value - valor_pago}\n-----')
+        print(f'pagamento: {key + 1}\nantes = {value}')
+        if value >= valor_pago:
+            print(f'depois = {value - valor_pago}\n-----')
+        else:
+            print(f'depois = {value -value}\n-----')
+            break
 else:
     print(f'pagamento: {1}\nantes = {divida}\ndepois = {divida - divida}\n-----')
 
