@@ -46,3 +46,4 @@ if divida > valor_pago:
             print(f'pagamento: {contador}\nantes = {divida}\ndepois = {divida - divida}\n-----')
             break
 print(f'pagamento: {contador}\nantes = {divida}\ndepois = {divida - divida}\n-----')
+
