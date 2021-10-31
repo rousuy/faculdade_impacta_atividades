@@ -37,7 +37,7 @@ else:
 valores = input().split()
 divida, valor_pago = int(valores[0]), int(valores[1])
 contador = 1
-if divida >= valor_pago:
+if divida > valor_pago:
     while True:
         print(f'pagamento: {contador}\nantes = {divida}\ndepois = {divida - valor_pago}\n-----')
         divida -= valor_pago
@@ -45,5 +45,4 @@ if divida >= valor_pago:
         if divida < valor_pago:
             print(f'pagamento: {contador}\nantes = {divida}\ndepois = {divida - divida}\n-----')
             break
-else:
-    print(f'pagamento: {contador}\nantes = {divida}\ndepois = {divida - divida}\n-----')
+print(f'pagamento: {contador}\nantes = {divida}\ndepois = {divida - divida}\n-----')
