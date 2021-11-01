@@ -19,23 +19,6 @@ Saída
 O número do pagamento, o valor restante da dívida antes do pagamento mensal e o valor restante da dívida após o
 pagamento mensal, conforme o padrão exibido nos exemplos. A exibição deve continuar até que a dívida seja quitada.
 """
-
-# Resposta utilizando laços de repetição for.... Em questão de legibilidade e performance do algoritmo, este script
-# não é o mais indicado?? No IDLE pycharm, a saída de dados, apresenta Runtime Error nos testes do URI....
-valores = input().split()
-divida, valor_pago = int(valores[0]), int(valores[1])
-if divida > valor_pago:
-    for key, value in enumerate(range(divida, -valor_pago, -valor_pago)):
-        print(f'pagamento: {key + 1}\nantes = {value}')
-        if value >= valor_pago:
-            print(f'depois = {value - valor_pago}\n-----')
-        else:
-            print(f'depois = {value -value}\n-----')
-            break
-else:
-    print(f'pagamento: {1}\nantes = {divida}\ndepois = {divida - divida}\n-----')
-
-
 # Resposta utilizando laços de repetição while....Em relação de legibilidade e simplicidade, acredito que este
 # Algoritmo seja mais recomendado do que o for?........Este também está dando Runtime Error no URI.
 valores = input().split()
