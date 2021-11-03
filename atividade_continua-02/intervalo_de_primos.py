@@ -16,6 +16,7 @@ Saída
 Os números primos presentes no intervalo fechado [ INÍCIO..FIM ] e a quantidade de números primos do intervalo,
 conforme o padrão exibido nos exemplos.
 """
+
 # Resposta Utilizando o laço de repetição for:
 inicio = int(input())
 fim = int(input())
@@ -47,3 +48,4 @@ while inicio <= fim:
         primos += 1
     inicio += 1
 print(f'primos: {primos}')
+
