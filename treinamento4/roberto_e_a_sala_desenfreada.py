@@ -23,21 +23,31 @@ Seu programa deve imprimir 3 linhas contendo o numero de alunos que são de EPR,
 “sigla: quantidade”. ( Ver exemplo de saída ).
 """
 # Resposta:
+
+
+def cadastrar_alunos():
+    matricula = input().split()
+    if matricula[1] == 'EPR':
+        return 1
+    elif matricula[1] == 'EHD':
+        return 2
+    else:
+        return 3
+
+
 while True:
     try:
-        contador = 1
         num = int(input())
+        contador = 1
         epr, ehd, intrusos = 0, 0, 0
         while contador <= num:
-            matricula_curso = input().split()
-            if 1 < len(matricula_curso) <= 2:
-                if matricula_curso[1] == 'EPR':
-                    epr += 1
-                elif matricula_curso[1] == 'EHD':
-                    ehd += 1
-                else:
-                    intrusos += 1
+            cadastro = cadastrar_alunos()
+            if cadastro == 1:
+                epr += 1
+            elif cadastro == 2:
+                ehd += 1
+            else:
+                intrusos += 1
             contador += 1
-        print(f'EPR: {epr}\nEHD: {ehd}\nINTRUSOS: {intrusos}')
     except EOFError:
         break
