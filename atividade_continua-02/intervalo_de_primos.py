@@ -48,4 +48,3 @@ while inicio <= fim:
         primos += 1
     inicio += 1
 print(f'primos: {primos}')
-
