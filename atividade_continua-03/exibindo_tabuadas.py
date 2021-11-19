@@ -13,7 +13,15 @@ a frase 'Nenhuma tabuada no intervalo!', sem apóstrofos. Obs.: Lembre-se de nã
 # Resposta:
 
 
-def calcula_tabuada(x, y):
+def calcula_tabuada(x: int, y: int) -> print():
+    """
+    Imprimi a tabuada de acordo com os números passados para x e y, caso x seja maior que y, será desconsiderado, senão,
+    caso números positivos, será impressa a tabuada na respectiva ordem do intervalo, caso os números sejam negativos,
+    também será impressa a tabuada em ordem crescente, até que o valor seja igual a 10.
+    :param x: int -> Valores positivos ou negativos menores que y
+    :param y: int -> Valores positivos ou negativos maiores que x
+    :return: None
+    """
     if x <= y:
         while x <= y:
             contador = 1

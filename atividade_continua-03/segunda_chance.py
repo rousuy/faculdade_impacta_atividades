@@ -42,7 +42,15 @@ e completadas com zeros à esquerda quando necessário.
 """
 
 
-def grade_calculate(param1, param2):
+def grade_calculate(param1: list, param2: list) -> tuple:
+    """
+    Calcula as notas de acordo com o valores.
+    Se a nota original, for igual a 10, o o valor da nota será mantido, caso contrário, irá ser adicionado 2 pontos,
+    se o valor da prova substitutiva for igual a 10, senão, nenhum acréscimo será considerado.
+    :param param1: lista com os valores da prova original;
+    :param param2: lista com os valores da prova substitutiva;
+    :return: Retorna uma tupla com com os valores das notas, calculadas de acordo com a comparação dos parâmetros
+    """
     count_updated_grade = 0
     upgrade_grade = []
     for v1 in param1:
@@ -69,7 +77,12 @@ def grade_calculate(param1, param2):
     return upgrade_grade, count_updated_grade
 
 
-def grade_output(param1):
+def grade_output(param1: tuple) -> print():
+    """
+    Imprimi as notas calculadas, com  f' strings
+    :param param1: Recebe uma Tupla com os valores das notas calculadas
+    :return: None
+    """
     print(f'NOTAS ALTERADAS: {param1[1]}')
     for k, v in enumerate(param1[0]):
         print(f'{v[0]}({1 + k:0>3}) original: {v[1]:0^5} | final: {v[2]:0^5}')
@@ -77,18 +90,12 @@ def grade_output(param1):
 
 original_grade = []
 substitute_grade = []
-count = 1
 total_students = int(input())
-while count <= total_students:
-    for i in range(0, total_students):
-        a_grade = float(input())
-        original_grade.append(a_grade)
-        count += 1
-    for i in range(0, total_students):
-        b_grade = float(input())
-        substitute_grade.append(b_grade)
-        count += 1
-
-
+for i in range(0, total_students):
+    a_grade = float(input())
+    original_grade.append(a_grade)
+for i in range(0, total_students):
+    b_grade = float(input())
+    substitute_grade.append(b_grade)
 grade = (grade_calculate(original_grade, substitute_grade))
 grade_output(grade)

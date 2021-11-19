@@ -43,19 +43,39 @@ em reais e com duas casas decimais, exatamente como consta nos exemplos.
 
 # Resposta:
 
-# Cabeçalho
-def header():
+
+def header() -> print():
+    """
+    Imprimi o cabeçalho
+    ->  -----
+        BÔNUS
+        -----
+    :return: None
+    """
     print(f'{"-" * 5}\nBÔNUS\n{"-" * 5}')
 
 
-def payment_out(param1):
-    header()
+def payment_out(param1: list) -> print():
+    """
+    Imprimi o Cabeçalho, e os valores que cada Canal irá receber, calculado previamente
+    :param param1: Recebe a lista com os valores calculados
+    :return: None
+    """
+    header()  # Imprimi Cabeçalho
     for i in param1:
-        print(f'{i[0]}: ', end='')
-        print(f'R$ {i[1]:.2f}')
+        print(f'{i[0]}: R$ {i[1]:.2f}')
 
 
-def payment_calculator(p1, p2, p3):
+def payment_calculator(p1: list, p2: float, p3: float) -> list:
+    """
+    Calcula os valores de acordo com a quantidade inscritos no canal, se é conteudo premium ou não, somado ao pagamento
+    do mês anterior, caso não seja conteúdo premium, sua comissão irá ser calculada sobre o valor de x, senão, pelo
+    valor de y. O pagamento irá ser calculado de acordo com a cada 1000 inscritos no canal.
+    :param p1: Lista contendo os dados dos Canais: Nome do canal, qtde_inscritos,
+    :param p2: Float -> caso seja conteúdo premium.
+    :param p3: Float -> caso NÃO seja conteúdo premium
+    :return: Retorna a lista com os valores que cada Canal deverá receber.
+    """
     payment_calculate = []
     for i in p1:
         if i[1] > 999:
