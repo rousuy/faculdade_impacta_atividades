@@ -34,6 +34,8 @@ Obs.: Lembre-se de não exibir texto no input.
 
 # Resposta:
 
+# Atenção, caso queira copiar este código para o URI VOCÊ DEVE RETIRAR OS DOCS STRINGS E ANNOTATIONS!, CASO CONTRARIO,
+# NÃO IRÁ PASSAR NO URI.
 
 def adicionar(param1: list, param2: list) -> list:
     """
@@ -74,18 +76,18 @@ def exibir(param):
             print(v, end=' ')
 
 
-cod_list = []
-cod1 = input().split()
-if cod1 != '':
-    adicionar(cod_list, cod1)
+code_list = []
+code1 = input().split()
+if code1 != '':
+    adicionar(code_list, code1)
 while True:
-    cod2 = input().split()
-    if cod2[0] == 'adicionar':
-        adicionar(cod_list, cod2)
-    elif cod2[0] == 'remover':
-        remover(cod_list, cod2[1])
-    elif cod2[0] == 'exibir':
-        exibir(cod_list)
-    elif cod2[0] == 'encerrar':
-        exibir(cod_list)
+    code2 = input().split()
+    if code2[0] == 'adicionar':
+        adicionar(code_list, code2)
+    elif code2[0] == 'remover':
+        remover(code_list, code2[1])
+    elif code2[0] == 'exibir':
+        exibir(code_list)
+    elif code2[0] == 'encerrar':
+        exibir(code_list)
         break

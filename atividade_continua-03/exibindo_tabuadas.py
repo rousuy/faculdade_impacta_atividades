@@ -12,6 +12,9 @@ a frase 'Nenhuma tabuada no intervalo!', sem apóstrofos. Obs.: Lembre-se de nã
 """
 # Resposta:
 
+# Atenção, caso queira copiar este código para o URI VOCÊ DEVE RETIRAR OS DOCS STRINGS E ANNOTATIONS!, CASO CONTRARIO,
+# NÃO IRÁ PASSAR NO URI.
+
 
 def calcula_tabuada(x: int, y: int) -> print():
     """
@@ -30,16 +33,8 @@ def calcula_tabuada(x: int, y: int) -> print():
                 contador += 1
             print('-' * 10)
             x += 1
-    elif x >= y and y < 0 < x:
-        while x >= y:
-            contador = 1
-            while contador <= x:
-                print(f'{x} x {contador} = {x * contador}')
-                contador += 1
-            print('-' * 10)
-            x -= 1
     else:
-        print('Nenhuma tabuada no intervalo')
+        print('Nenhuma tabuada no intervalo!')
 
 
 foo = int(input())

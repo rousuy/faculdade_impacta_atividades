@@ -41,6 +41,9 @@ as notas são exibidas com duas casas decimais e; (III) todas as notas ocupam ci
 e completadas com zeros à esquerda quando necessário.
 """
 
+# Atenção, caso queira copiar este código para o URI VOCÊ DEVE RETIRAR OS DOCS STRINGS E ANNOTATIONS!, CASO CONTRARIO,
+# NÃO IRÁ PASSAR NO URI.
+
 
 def grade_calculate(param1: list, param2: list) -> tuple:
     """

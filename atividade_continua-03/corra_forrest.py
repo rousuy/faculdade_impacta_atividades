@@ -22,27 +22,20 @@ na mesma ordem em que foram dados na entrada.
 """
 # Resposta:
 
+# Atenção, caso queira copiar este código para o URI VOCÊ DEVE RETIRAR OS DOCS STRINGS E ANNOTATIONS!, CASO CONTRÁRIO,
+# NÃO IRÁ PASSAR NO URI.
+
 
 def average_calculator(param: list) -> vars:
     """
-    Calcula a média aritmética das corridas
+    Calcula a média aritmética das corridas, no final imprime a media, e também as corridas que ficaram abaixo da média
     :param param: List -> Recebe os valores das corridas;
-    :return: var -> Retorna uma variável a média das corridas
+    :return: None
     """
-    average_t = sum(param) / len(param)
-    return average_t
-
-
-def average_output(param1: list, param2: vars) -> print():
-    """
-    Imprimi a média das corridas, caso alguma das corridas, sejam inferior ao valor da média, esta também será impressa.
-    :param param1: list -> Recebe os valores da corridas;
-    :param param2: var -> Recebe o valor da média
-    :return:
-    """
-    print(f'MEDIA: {param2:.2f}')
-    for i in param1:
-        if i < param2:
+    average_time = sum(param) / len(param)
+    print(f'MEDIA: {average_time:.2f}')
+    for i in param:
+        if i < average_time:
             print(i)
 
 
@@ -54,6 +47,4 @@ while True:
         break
     else:
         runs.append(time)
-        count += time
-average = average_calculator(runs)
-average_output(runs, average)
+average_calculator(runs)
