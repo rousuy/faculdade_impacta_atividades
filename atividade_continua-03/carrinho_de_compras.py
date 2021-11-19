@@ -30,44 +30,47 @@ na lista. Substitua <código> pelo número do código em questão (veja os exemp
 
 Obs.: Lembre-se de não exibir texto no input.
 """
+
+
 # Resposta:
 
 
-def adicionar(param):
-    add_list = [int(i) for i in param]
-    return add_list
+def adicionar(param, param2):
+    param2.append(param)
+    return
 
 
 def remover(param1, param2):
-    if param2 in param1:
+    try:
         param1.remove(param2)
-        return param1
-    else:
+    except ValueError:
         print(f'código {param2} não encontrado')
-        return param1
+    return
 
 
 def exibir(param):
     param.sort()
+    count = 0
     for i in param:
-        if i == param[-1]:
+        count += 1
+        if count == len(param):
             print(i)
         else:
             print(i, end=' ')
 
 
 cod_list = []
-command = input().split()
-if len(command) != 0:
-    cod_list.extend(command)
+codigo1 = input().split()
+if codigo1 != '':
+    codigo1 = [adicionar(int(i), cod_list) for i in codigo1]
 while True:
-    command = input().split()
-    if 'adicionar' in command:
-        cod_list.extend([int(command[1])])
-    elif 'remover' in command:
-        cod_list = remover(cod_list, int(command[1]))
-    elif 'exibir' in command:
+    codigo2 = input().split()
+    if codigo2[0] == 'adicionar':
+        adicionar(int(codigo2[1]), cod_list)
+    elif codigo2[0] == 'remover':
+        remover(cod_list, int(codigo2[1]))
+    elif codigo2[0] == 'exibir':
         exibir(cod_list)
-    elif 'encerrar' in command:
+    elif codigo2[0] == 'encerrar':
         exibir(cod_list)
         break
