@@ -82,7 +82,7 @@ def payment_calculator(p1: list, p2: float, p3: float) -> list:
             payment_calculated.append(pre_payment)
     # Fim do calculo
     header()  # Imprimi Cabeçalho
-    for i in payment_calculated:  # Imprime o resultado
+    for i in payment_calculated:  # Imprime o resultado formatado
         print(f'{i[0]}: R$ {i[1]:.2f}')
 
 

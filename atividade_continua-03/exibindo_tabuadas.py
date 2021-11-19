@@ -12,7 +12,7 @@ a frase 'Nenhuma tabuada no intervalo!', sem apóstrofos. Obs.: Lembre-se de nã
 """
 # Resposta:
 
-# Atenção, caso queira copiar este código para o URI VOCÊ DEVE RETIRAR OS DOCS STRINGS E ANNOTATIONS!, CASO CONTRARIO,
+# Atenção, caso queira copiar este código para o URI VOCÊ DEVE RETIRAR OS DOCS STRINGS E ANNOTATIONS!, CASO CONTRÁRIO,
 # NÃO IRÁ PASSAR NO URI.
 
 
