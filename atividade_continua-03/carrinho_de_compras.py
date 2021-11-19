@@ -35,42 +35,57 @@ Obs.: Lembre-se de não exibir texto no input.
 # Resposta:
 
 
-def adicionar(param, param2):
-    param2.append(param)
-    return
+def adicionar(param1: list, param2: list) -> list:
+    """
+    Converte os valor do parâmetro 2 para inteiro, caso haja algum dado que não seja um número, este será
+    desconsiderado, após, será incluido dentro da lista do carrinho.
+    :param param1: list -> Carrinho os valores dos códigos do produto;
+    :param param2: list -> Valores que contém os códigos à serem adicionados ao carrinho;
+    :return: list -> retorna a lista do carrinho, com os códigos adicionados.
+    """
+    for i in param2:
+        try:
+            param1.append(int(i))
+        except ValueError:
+            pass
+    return param1
 
 
-def remover(param1, param2):
+def remover(param1: list, param2: str) -> list:
+    """
+    Remove o item do carrinho. Caso o código informado não esteja na lista do carrinho, este será desconsiderado, e
+    será impresso uma mensagem ao usuário.
+    :param param1: list -> Contêm os valores dos códigos dos produtos no carrinho;
+    :param param2: str -> Recebe o input do usuário com o código do produto a ser removido, sendo convertido para int
+    :return: A lista atualizada com o código do produto removido, caso este esteja dentro do carrinho.
+    """
     try:
-        param1.remove(param2)
+        param1.remove(int(param2))
     except ValueError:
         print(f'código {param2} não encontrado')
-    return
+    return param1
 
 
 def exibir(param):
-    param.sort()
-    count = 0
-    for i in param:
-        count += 1
-        if count == len(param):
-            print(i)
+    for k, v in enumerate(sorted(param)):
+        if k + 1 == len(param):
+            print(v)
         else:
-            print(i, end=' ')
+            print(v, end=' ')
 
 
 cod_list = []
-codigo1 = input().split()
-if codigo1 != '':
-    codigo1 = [adicionar(int(i), cod_list) for i in codigo1]
+cod1 = input().split()
+if cod1 != '':
+    adicionar(cod_list, cod1)
 while True:
-    codigo2 = input().split()
-    if codigo2[0] == 'adicionar':
-        adicionar(int(codigo2[1]), cod_list)
-    elif codigo2[0] == 'remover':
-        remover(cod_list, int(codigo2[1]))
-    elif codigo2[0] == 'exibir':
+    cod2 = input().split()
+    if cod2[0] == 'adicionar':
+        adicionar(cod_list, cod2)
+    elif cod2[0] == 'remover':
+        remover(cod_list, cod2[1])
+    elif cod2[0] == 'exibir':
         exibir(cod_list)
-    elif codigo2[0] == 'encerrar':
+    elif cod2[0] == 'encerrar':
         exibir(cod_list)
         break
