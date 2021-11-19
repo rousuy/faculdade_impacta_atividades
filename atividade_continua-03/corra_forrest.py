@@ -26,7 +26,7 @@ na mesma ordem em que foram dados na entrada.
 # NÃO IRÁ PASSAR NO URI.
 
 
-def average_calculator(param: list) -> vars:
+def average_calculator(param: list) -> print():
     """
     Calcula a média aritmética das corridas, no final imprime a media, e também as corridas que ficaram abaixo da média
     :param param: List -> Recebe os valores das corridas;

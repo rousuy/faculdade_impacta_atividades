@@ -83,7 +83,7 @@ def grade_calculate(param1: list, param2: list) -> tuple:
 def grade_output(param1: tuple) -> print():
     """
     Imprimi as notas calculadas, com  f' strings
-    :param param1: Recebe uma Tupla com os valores das notas calculadas
+    :param param1: Recebe uma Tupla com os valores das notas calculadas.
     :return: None
     """
     print(f'NOTAS ALTERADAS: {param1[1]}')

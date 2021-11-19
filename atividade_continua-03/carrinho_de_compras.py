@@ -58,7 +58,7 @@ def remover(param1: list, param2: str) -> list:
     Remove o item do carrinho. Caso o código informado não esteja na lista do carrinho, este será desconsiderado, e
     será impresso uma mensagem ao usuário.
     :param param1: list -> Contêm os valores dos códigos dos produtos no carrinho;
-    :param param2: str -> Recebe o input do usuário com o código do produto a ser removido, sendo convertido para int
+    :param param2: str -> Recebe o input do usuário com o código do produto a ser removido, sendo convertido para int;
     :return: A lista atualizada com o código do produto removido, caso este esteja dentro do carrinho.
     """
     try:
