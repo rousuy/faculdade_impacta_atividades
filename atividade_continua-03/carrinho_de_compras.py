@@ -68,7 +68,6 @@ def remover(param1: list, param2: str) -> list:
     return param1
 
 
-
 def exibir(param: list) -> print():
     """
     Imprime o resultado na tela
