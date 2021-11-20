@@ -68,10 +68,11 @@ def remover(param1: list, param2: str) -> list:
     return param1
 
 
-def exibir(param: tuple) -> print():
+
+def exibir(param: list) -> print():
     """
     Imprime o resultado na tela
-    :param param: tuple -> tupla contendo as valores a serem impressos.
+    :param param: list -> contêm os valores a serem impressos.
     :return:
     """
     for k, v in enumerate(sorted(param)):
