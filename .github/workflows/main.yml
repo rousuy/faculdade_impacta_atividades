@@ -27,5 +27,5 @@ jobs:
     - name: Lint with flake8
       run: poetry run flake8 -q
     - name: Run pytest for tests in project
-      run: poetry run pytest
+      run: poetry run pytest --cov=atividades
     
