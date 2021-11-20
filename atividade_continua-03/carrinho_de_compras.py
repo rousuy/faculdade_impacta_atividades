@@ -68,7 +68,12 @@ def remover(param1: list, param2: str) -> list:
     return param1
 
 
-def exibir(param):
+def exibir(param: tuple) -> print():
+    """
+    Imprime o resultado na tela
+    :param param: tuple -> tupla contendo as valores a serem impressos.
+    :return:
+    """
     for k, v in enumerate(sorted(param)):
         if k + 1 == len(param):
             print(v)
@@ -78,7 +83,7 @@ def exibir(param):
 
 code_list = []
 code1 = input().split()
-if code1 != '':
+if len(code1) != 0:
     adicionar(code_list, code1)
 while True:
     code2 = input().split()
