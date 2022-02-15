@@ -27,8 +27,6 @@ jobs:
     - name: Lint with flake8
       run: poetry run flake8 -q
     - name: Run pytest for tests in project
-      run: poetry run pytest --cov=atividades
-    - name: Install CodeCov only in CI pipline
       run: |
         poetry add --dev codecov
         poetry run codecov
