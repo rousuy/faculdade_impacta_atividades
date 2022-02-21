@@ -1,7 +1,7 @@
 # Programação Orientada a Objetos
 # AC02 ADS-EaD - Implementação de classes
 #
-# Email Impacta: ______________@aluno.faculdadeimpacta.com.br
+# Email Impacta: rodrigo.usuy@aluno.faculdadeimpacta.com.br
 
 """
 Nesta atividade você deve implementar uma classe que modela uma conta em um banco.
