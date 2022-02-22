@@ -30,47 +30,47 @@ class Conta:
 		* OBS: note que o(s) valor(es) contido(s) na lista de operações (que é um
 		atributo privado) sempre serão tuplas, cada uma com 2 valores.
 		"""
-		self._titular = titular
-		self._agencia = agencia
-		self._numero = numero
-		self._saldo = saldo_inicial
-		self._ativa = False
-		self._operacoes = [('saldo incicial', self._saldo)]
+		self.__titular = titular
+		self.__agencia = agencia
+		self.__numero = numero
+		self.__saldo = saldo_inicial
+		self.__ativa = False
+		self.__operacoes = [('saldo incicial', self.__saldo)]
 
 	@property
 	def titular(self):
 		"""
 		Implemente a property titular: retorna o valor do atributo privado titular;
 		"""
-		return self._titular
+		return self.__titular
 
 	@property
 	def agencia(self):
 		"""
 		Implemente a property agencia: retorna o valor do atributo privado agencia;
 		"""
-		return self._agencia
+		return self.__agencia
 
 	@property
 	def numero(self):
 		"""
 		Implemente a property numero: retorna o valor do atributo privado numero;
 		"""
-		return self._numero
+		return self.__numero
 
 	@property
 	def saldo(self):
 		"""
 		Implemente a property saldo: retorna o valor do atributo privado saldo;
 		"""
-		return self._saldo
+		return self.__saldo
 
 	@property
 	def ativa(self):
 		"""
 		Implemente a property ativa: retorna o valor do atributo privado ativa;
 		"""
-		return self._ativa
+		return self.__ativa
 
 	@ativa.setter
 	def ativa(self, situacao):
@@ -86,9 +86,9 @@ class Conta:
 		o nome de uma variável ou parâmetro, e bool representa o tipo booleano.
 		"""
 		if isinstance(situacao, bool):
-			self._ativa = situacao
+			self.__ativa = situacao
 		else:
-			print("Valor deve ser booleano [False / True]")
+			raise ValueError("O valor da situação deve ser booleano [False / True]")
 
 	def depositar(self, valor):
 		"""
@@ -100,12 +100,12 @@ class Conta:
 		a conta está ativa e o valor do depósito deve ser maior que zero. Você deve
 		implementar essas verificações.
 		"""
-		if self._ativa and valor > 0:
-			self._saldo += valor
-			self._operacoes.append(('deposito', valor))
+		if self.__ativa and valor > 0:
+			self.__saldo += valor
+			self.__operacoes.append(('deposito', valor))
 
 		else:
-			print("A conta deve estar ativa, e o valor deve ser maior que 0")
+			raise ValueError("A conta deve estar ativa, o depósito deve ser maior que zero.")
 
 	def sacar(self, valor):
 		"""
@@ -118,9 +118,9 @@ class Conta:
 		saque não pode ser maior que o saldo atual da conta. Você deve implementar
 		essas verificações.
 		"""
-		if self.ativa and 0 < valor <= self._saldo:
-			self._saldo -= valor
-			self._operacoes.append(('saque', valor))
+		if self.ativa and 0 < valor <= self.__saldo:
+			self.__saldo -= valor
+			self.__operacoes.append(('saque', valor))
 		else:
 			raise ValueError('Valor deve ser maior 0, a conta deve estar ativa, e valor deve ser menor que saldo')
 
@@ -140,12 +140,12 @@ class Conta:
 		não pode ser maior que o saldo atual da conta de origem. Você deve implementar
 		essas verificações.
 		"""
-		if isinstance(conta_destino, Conta) and self.ativa and conta_destino.ativa and valor > 0 and valor <= self._saldo:
-			self._saldo -= valor
+		if isinstance(conta_destino, Conta) and self.ativa and conta_destino.ativa and 0 < valor <= self.__saldo:
+			self.sacar(valor)
 			conta_destino.depositar(valor)
-			self._operacoes.append(('transferencia', valor))
+			self.__operacoes.append(('transferencia', valor))
 		else:
-			print("Erro, por favor verifique os dados...")
+			raise ValueError("Erro, por favor verifique os dados...")
 
 	def tirar_extrato(self):
 		"""
@@ -170,65 +170,5 @@ class Conta:
 		Você deve seguir exatamente esse padrão, utilizando letras minúsculas e sem
 		acentos.
 		"""
-		print("-" * 45)
-		print("operacão             / entrada no extrato")
-		print("-" * 45)
-		print(f"* abertura da conta  / {self._operacoes[0]}")
-		for value in self._operacoes:
-			if 'deposito' == value[0]:
-				print(f"* {value[0]}           / {value}")
-			elif 'saque' == value[0]:
-				print(f"* {value[0]}              / {value}")
-			elif 'transferencia' == value[0]:
-				print(f"* {value[0]}      / {value}")
-
-		return self._operacoes
-
-# def __init__(self, titular, agencia, numero, saldo_inicial):
-
-
-if __name__ == '__main__':
-	# print(f"Saldo: R${conta1.saldo}")
-	# conta1.ativa = True
-	# try:
-	#
-	# 	conta1.sacar(90)
-	# except ValueError as e:
-	# 	print(e)
-	#
-	# print(f"Saldo: R${conta1.saldo}")
-	# conta1.depositar(1000)
-	# print(f"Saldo: R${conta1.saldo}")
-	# try:
-	#
-	# 	conta1.sacar(1000)
-	# except ValueError as e:
-	# 	print(e)
-	#
-	# print(f"Saldo: R${conta1.saldo}")
-	conta1 = Conta("Rodrigo", '001', '1234', 500)
-	conta2 = Conta("João", '001', '4321', 100)
-	conta1.ativa = True
-	conta2.ativa = True
-	print(conta1.tirar_extrato())
-	conta1.ativa = True
-	conta1.depositar(1000)
-	print(conta1.saldo)
-	conta1.sacar(1500)
-	print(conta1.saldo)
-	conta1.depositar(3000)
-	print(conta1.saldo)
-	conta1.transferir(conta2, 1500)
-	print(conta1.saldo)
-	print(conta2.saldo)
-	conta1.tirar_extrato()
-
-
-
-
-
-
-
-
-
+		return self.__operacoes
 
