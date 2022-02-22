@@ -1,6 +1,5 @@
 # Programação Orientada a Objetos
 # AC02 ADS-EaD - Implementação de classes
-#
 # Email Impacta: rodrigo.usuy@aluno.faculdadeimpacta.com.br
 
 """
@@ -30,47 +29,76 @@ class Conta:
 		* OBS: note que o(s) valor(es) contido(s) na lista de operações (que é um
 		atributo privado) sempre serão tuplas, cada uma com 2 valores.
 		"""
+<<<<<<< HEAD
 		self.__titular = titular
 		self.__agencia = agencia
 		self.__numero = numero
 		self.__saldo = saldo_inicial
 		self.__ativa = False
 		self.__operacoes = [('saldo incicial', self.__saldo)]
+=======
+		self._titular = titular
+		self._agencia = agencia
+		self._numero = numero
+		self._saldo = saldo_inicial
+		self._ativa = False
+		self._operacoes = [('saldo incicial', self._saldo)]
+>>>>>>> 26622b1d4ba0342f312824796d3845f2780e74d8
 
 	@property
 	def titular(self):
 		"""
 		Implemente a property titular: retorna o valor do atributo privado titular;
 		"""
+<<<<<<< HEAD
 		return self.__titular
+=======
+		return self._titular
+>>>>>>> 26622b1d4ba0342f312824796d3845f2780e74d8
 
 	@property
 	def agencia(self):
 		"""
 		Implemente a property agencia: retorna o valor do atributo privado agencia;
 		"""
+<<<<<<< HEAD
 		return self.__agencia
+=======
+		return self._agencia
+>>>>>>> 26622b1d4ba0342f312824796d3845f2780e74d8
 
 	@property
 	def numero(self):
 		"""
 		Implemente a property numero: retorna o valor do atributo privado numero;
 		"""
+<<<<<<< HEAD
 		return self.__numero
+=======
+		return self._numero
+>>>>>>> 26622b1d4ba0342f312824796d3845f2780e74d8
 
 	@property
 	def saldo(self):
 		"""
 		Implemente a property saldo: retorna o valor do atributo privado saldo;
 		"""
+<<<<<<< HEAD
 		return self.__saldo
+=======
+		return self._saldo
+>>>>>>> 26622b1d4ba0342f312824796d3845f2780e74d8
 
 	@property
 	def ativa(self):
 		"""
 		Implemente a property ativa: retorna o valor do atributo privado ativa;
 		"""
+<<<<<<< HEAD
 		return self.__ativa
+=======
+		return self._ativa
+>>>>>>> 26622b1d4ba0342f312824796d3845f2780e74d8
 
 	@ativa.setter
 	def ativa(self, situacao):
@@ -86,9 +114,15 @@ class Conta:
 		o nome de uma variável ou parâmetro, e bool representa o tipo booleano.
 		"""
 		if isinstance(situacao, bool):
+<<<<<<< HEAD
 			self.__ativa = situacao
 		else:
 			raise ValueError("O valor da situação deve ser booleano [False / True]")
+=======
+			self._ativa = situacao
+		else:
+			print("Valor deve ser booleano [False / True]")
+>>>>>>> 26622b1d4ba0342f312824796d3845f2780e74d8
 
 	def depositar(self, valor):
 		"""
@@ -100,12 +134,21 @@ class Conta:
 		a conta está ativa e o valor do depósito deve ser maior que zero. Você deve
 		implementar essas verificações.
 		"""
+<<<<<<< HEAD
 		if self.__ativa and valor > 0:
 			self.__saldo += valor
 			self.__operacoes.append(('deposito', valor))
 
 		else:
 			raise ValueError("A conta deve estar ativa, o depósito deve ser maior que zero.")
+=======
+		if self._ativa and valor > 0:
+			self._saldo += valor
+			self._operacoes.append(('deposito', valor))
+
+		else:
+			print("A conta deve estar ativa, e o valor deve ser maior que 0")
+>>>>>>> 26622b1d4ba0342f312824796d3845f2780e74d8
 
 	def sacar(self, valor):
 		"""
@@ -118,9 +161,15 @@ class Conta:
 		saque não pode ser maior que o saldo atual da conta. Você deve implementar
 		essas verificações.
 		"""
+<<<<<<< HEAD
 		if self.ativa and 0 < valor <= self.__saldo:
 			self.__saldo -= valor
 			self.__operacoes.append(('saque', valor))
+=======
+		if self.ativa and 0 < valor <= self._saldo:
+			self._saldo -= valor
+			self._operacoes.append(('saque', valor))
+>>>>>>> 26622b1d4ba0342f312824796d3845f2780e74d8
 		else:
 			raise ValueError('Valor deve ser maior 0, a conta deve estar ativa, e valor deve ser menor que saldo')
 
@@ -140,12 +189,21 @@ class Conta:
 		não pode ser maior que o saldo atual da conta de origem. Você deve implementar
 		essas verificações.
 		"""
+<<<<<<< HEAD
 		if isinstance(conta_destino, Conta) and self.ativa and conta_destino.ativa and 0 < valor <= self.__saldo:
 			self.sacar(valor)
 			conta_destino.depositar(valor)
 			self.__operacoes.append(('transferencia', valor))
 		else:
 			raise ValueError("Erro, por favor verifique os dados...")
+=======
+		if isinstance(conta_destino, Conta) and self.ativa and conta_destino.ativa and valor > 0 and valor <= self._saldo:
+			self._saldo -= valor
+			conta_destino.depositar(valor)
+			self._operacoes.append(('transferencia', valor))
+		else:
+			print("Erro, por favor verifique os dados...")
+>>>>>>> 26622b1d4ba0342f312824796d3845f2780e74d8
 
 	def tirar_extrato(self):
 		"""
@@ -170,5 +228,69 @@ class Conta:
 		Você deve seguir exatamente esse padrão, utilizando letras minúsculas e sem
 		acentos.
 		"""
+<<<<<<< HEAD
 		return self.__operacoes
+=======
+		print("-" * 45)
+		print("operacão             / entrada no extrato")
+		print("-" * 45)
+		print(f"* abertura da conta  / {self._operacoes[0]}")
+		for value in self._operacoes:
+			if 'deposito' == value[0]:
+				print(f"* {value[0]}           / {value}")
+			elif 'saque' == value[0]:
+				print(f"* {value[0]}              / {value}")
+			elif 'transferencia' == value[0]:
+				print(f"* {value[0]}      / {value}")
+
+		return self._operacoes
+
+# def __init__(self, titular, agencia, numero, saldo_inicial):
+
+
+if __name__ == '__main__':
+	# print(f"Saldo: R${conta1.saldo}")
+	# conta1.ativa = True
+	# try:
+	#
+	# 	conta1.sacar(90)
+	# except ValueError as e:
+	# 	print(e)
+	#
+	# print(f"Saldo: R${conta1.saldo}")
+	# conta1.depositar(1000)
+	# print(f"Saldo: R${conta1.saldo}")
+	# try:
+	#
+	# 	conta1.sacar(1000)
+	# except ValueError as e:
+	# 	print(e)
+	#
+	# print(f"Saldo: R${conta1.saldo}")
+	conta1 = Conta("Rodrigo", '001', '1234', 500)
+	conta2 = Conta("João", '001', '4321', 100)
+	conta1.ativa = True
+	conta2.ativa = True
+	print(conta1.tirar_extrato())
+	conta1.ativa = True
+	conta1.depositar(1000)
+	print(conta1.saldo)
+	conta1.sacar(1500)
+	print(conta1.saldo)
+	conta1.depositar(3000)
+	print(conta1.saldo)
+	conta1.transferir(conta2, 1500)
+	print(conta1.saldo)
+	print(conta2.saldo)
+	conta1.tirar_extrato()
+
+
+
+
+
+
+
+
+
+>>>>>>> 26622b1d4ba0342f312824796d3845f2780e74d8
 
