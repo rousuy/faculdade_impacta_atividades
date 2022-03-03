@@ -34,7 +34,7 @@ class Conta:
 		self.__numero = numero
 		self.__saldo = saldo_inicial
 		self.__ativa = False
-		self.__operacoes = [('saldo incicial', self.__saldo)]
+		self.__operacoes = [('saldo inicial', self.__saldo)]
 
 
 	@property
