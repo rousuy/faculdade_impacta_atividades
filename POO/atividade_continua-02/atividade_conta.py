@@ -36,7 +36,7 @@ class Conta:
 		self.__ativa = False
 		self.__operacoes = [('saldo inicial', self.__saldo)]
 
-
+    
 	@property
 	def titular(self):
 		"""
@@ -87,9 +87,6 @@ class Conta:
 		"""
 		if isinstance(situacao, bool):
 			self.__ativa = situacao
-		else:
-			raise ValueError("O valor da situação deve ser booleano [False / True]")
-
 
 	def depositar(self, valor):
 		"""
@@ -104,10 +101,6 @@ class Conta:
 		if self.__ativa and valor > 0:
 			self.__saldo += valor
 			self.__operacoes.append(('deposito', valor))
-
-		else:
-			raise ValueError("A conta deve estar ativa, o depósito deve ser maior que zero.")
-
 
 	def sacar(self, valor):
 		"""
@@ -124,9 +117,6 @@ class Conta:
 		if self.ativa and 0 < valor <= self.__saldo:
 			self.__saldo -= valor
 			self.__operacoes.append(('saque', valor))
-		else:
-			raise ValueError('Valor deve ser maior 0, a conta deve estar ativa, e valor deve ser menor que saldo')
-
 
 	def transferir(self, conta_destino, valor):
 		"""
@@ -148,9 +138,6 @@ class Conta:
 			self.sacar(valor)
 			conta_destino.depositar(valor)
 			self.__operacoes.append(('transferencia', valor))
-		else:
-			raise ValueError("Erro, por favor verifique os dados...")
-
 
 	def tirar_extrato(self):
 		"""
