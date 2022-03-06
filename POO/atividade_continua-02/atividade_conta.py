@@ -36,6 +36,7 @@ class Conta:
 		self.__ativa = False
 		self.__operacoes = [('saldo inicial', self.__saldo)]
 
+    
 	@property
 	def titular(self):
 		"""
