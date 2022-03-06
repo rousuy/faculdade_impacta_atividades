@@ -20,7 +20,6 @@ class Produto:
 		self.nome = nome
 		self.preco = preco
 
-	
 	@property
 	def nome(self):
 		"""
@@ -28,7 +27,6 @@ class Produto:
 		"""
 		return self.__nome
 
-	
 	@property
 	def preco(self):
 		"""
@@ -36,7 +34,6 @@ class Produto:
 		"""
 		return self.__preco
 
-	
 	@nome.setter
 	def nome(self, novo_nome):
 		"""
@@ -52,7 +49,6 @@ class Produto:
 		else:
 			raise ValueError("Nome não pode estar vazio")
 
-	
 	@preco.setter
 	def preco(self, novo_preco):
 		"""
@@ -74,8 +70,6 @@ class Produto:
 		else:
 			raise TypeError("Preco deve ser um número inteiro ou real")
 
-
-	
 	def calcular_preco_com_frete(self):
 		"""
 		Método que calcula o valor final do produto com o frete incluso.
@@ -101,7 +95,6 @@ class ProdutoFisico(Produto):
 		"""
 		super().__init__(nome, preco)
 		self.peso = peso
-	
 
 	@property
 	def peso(self):
@@ -109,7 +102,6 @@ class ProdutoFisico(Produto):
 		Property peso: devolve (retorna) o valor do atributo privado peso.
 		"""
 		return self.__peso
-	
 
 	@peso.setter
 	def peso(self, novo_peso):
@@ -131,8 +123,6 @@ class ProdutoFisico(Produto):
 		else:
 			raise TypeError("Valor do peso deve ser numérico")
 
-
-	
 	def peso_em_kg(self):
 		"""
 		Método que calcula o peso do produto em quilogramas.
@@ -143,7 +133,6 @@ class ProdutoFisico(Produto):
 			- Se o valor do atributo privado peso for 600, este método retorna 0.6;
 		"""
 		return self.__peso / 1000
-
 
 	def calcular_preco_com_frete(self):
 		"""
@@ -187,15 +176,12 @@ class ProdutoEletronico(ProdutoFisico):
 		self.tensao = tensao
 		self.__tempo_garantia = tempo_garantia
 
-
-	
 	@property
 	def tensao(self):
 		"""
 		Property tensao: devolve (retorna) o valor do atributo privado tensao.
 		"""
 		return self.__tensao
-
 
 	@property
 	def tempo_garantia(self):
@@ -204,7 +190,6 @@ class ProdutoEletronico(ProdutoFisico):
 		"""
 		return self.__tempo_garantia
 
-	
 	@tensao.setter
 	def tensao(self, nova_tensao):
 		"""
@@ -228,7 +213,6 @@ class ProdutoEletronico(ProdutoFisico):
 
 		else:
 			raise TypeError("Valor da tensão deve ser do tipo inteiro")
-
 
 	def calcular_preco_com_frete(self):
 		"""
@@ -272,7 +256,6 @@ class Ebook(Produto):
 		super().__init__(nome, preco)
 		self.__autor = autor
 		self.numero_paginas = numero_paginas
-	
 
 	@property
 	def nome_exibicao(self):
@@ -289,7 +272,6 @@ class Ebook(Produto):
 		"""
 		return f"{self.nome} ({self.__autor})"
 
-
 	@property
 	def numero_paginas(self):
 		"""
@@ -297,7 +279,6 @@ class Ebook(Produto):
 		privado numero_paginas.
 		"""
 		return self.__numero_paginas
-	
 
 	@numero_paginas.setter
 	def numero_paginas(self, valor):
@@ -315,7 +296,6 @@ class Ebook(Produto):
 			raise ValueError("Número de páginas deve ser maior que zero")
 
 
-
 if __name__ == "__main__":
 	# teste_produto = Produto('João', 200)
 	# print(teste_produto.nome, teste_produto.preco)
@@ -323,7 +303,8 @@ if __name__ == "__main__":
 	# print(teste_produto_fisico.nome, teste_produto_fisico.preco, teste_produto_fisico.peso)
 	# print(teste_produto_fisico.calcular_preco_com_frete())
 	# teste_produto_eletronico = ProdutoEletronico('Máquina de Lavar', 100, 1000, 127, 12)
-	# print(teste_produto_eletronico.nome, teste_produto_eletronico.preco, teste_produto_eletronico.peso, teste_produto_eletronico.tensao, teste_produto_eletronico.tempo_garantia)
+	# print(teste_produto_eletronico.nome, teste_produto_eletronico.preco, teste_produto_eletronico.peso,
+	# teste_produto_eletronico.tensao, teste_produto_eletronico.tempo_garantia)
 	# print(teste_produto_eletronico.calcular_preco_com_frete())
 	teste_ebook = Ebook('Senhor dos Anéis', 100, "J. R. R. Tolkien", 250)
 	print(teste_ebook.preco, teste_ebook.nome_exibicao, teste_ebook.numero_paginas)
