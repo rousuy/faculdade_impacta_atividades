@@ -26,7 +26,7 @@ jobs:
       run: poetry install --quiet
     - name: Lint with flake8
       run: poetry run flake8 -q
-    - name: Run pytest for tests in project
+    - name: Run pytest for tests o coverage in project
       run: |
-        poetry add --dev codecov
+        poetry run pytest --cov=./source/atividade/POO
         poetry run codecov
